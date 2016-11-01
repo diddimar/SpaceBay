@@ -1,0 +1,27 @@
+<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" *ngIf="item">
+    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-3">
+        <h1> {{ item.name }} </h1>
+        <img class="detailImgSmall " src="{{ item.photo }}">
+        <div class="clear-fix"></div>
+        <span>Price: </span>
+        <span class="badge">{{ item.price }}</span>
+        <span><img class="buttonImg" src="app/img/basket.png" (click)="buy(item); $event.stopPropagation()" ></span>
+    </div>
+    <div class="col-lg-8 col-md-8 col-sm-8 col-xs-9">
+        <img class="buttonImg" src="app/img/back-arrow.png" (click)="goBack()">
+
+        <img class="detailImg img-responsive" [src]="item.blueprint"/>
+        <h3>Description:</h3>
+        <blockquote> {{ item.description }}  </blockquote>
+    
+        
+    </div>
+
+</div>
+ <div class="smallBasketDiv footer navbar-fixed-bottom pull-right">
+     <p>  {{ numberOfItems }} : Items </p>
+    <p>Total Price : {{ totalPrice | currency:'USD':true:'1.0' }} </p>
+    <span><img class="listImg img-responsive textCenter" src="app/img/basket.png" (click)="viewBasket()" ></span>
+</div>
+
+

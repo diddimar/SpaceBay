@@ -1,0 +1,67 @@
+body * { 
+  font-family: 'Fjalla One', sans-serif;
+  }
+input { margin: 10px 0 10px 0;}
+textarea {
+  height: 120px;
+  width: 200px;
+}
+.active {
+  background-color:#FFA500;
+}
+.navbar {
+  margin-bottom: 30px;
+}
+.viewButtons li{
+    list-style: none;
+    float: left;
+    margin: 0 10px 10px 0 ;
+}
+.buttonImg:hover {cursor: pointer;}
+.buttonImg {
+  height: 30px;
+  width: 30px;
+  margin: 0 0 2px 0;
+}
+.search-result:hover { 
+  font-weight:bold;
+  cursor: pointer;
+}
+.list-group-item:hover {cursor: pointer;}
+.listImg:hover {cursor: pointer;}
+.listImg {
+  width: auto;
+  height: 90px;
+}
+.listName {
+  margin-left: 30px;
+  font-size: 20px;
+}
+.gridImg{
+  width: 50%;
+  height: auto;
+}
+.gridItem:hover {cursor: pointer;}
+.gridItem {
+      height: 250px;
+}
+.detailImg {
+  width: 100%;
+  height: auto;
+  border-style: solid;
+  border-left: thick double #D3D3D3;
+}
+.detailImgSmall {
+  margin: 10px 0 30px -40px;
+  width: 110%;
+  height: auto;
+}
+.basketImg {
+  width: auto;
+  height: 50px;
+}
+.smallBasketDiv {
+  width: 130px;
+  margin-left: 70px;
+  margin-bottom: 40px;
+}

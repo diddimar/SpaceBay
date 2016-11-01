@@ -1,0 +1,11 @@
+   
+      <a routerLink="/new" routerLinkActive="active"><button class="btn btn-success">New Item</button></a>
+
+      <ul class="list-group">
+            <li class="list-group-item" *ngFor="let item of items" (click)="onSelect(item)">
+                  <img class="listImg " src="{{ item.photo }}">
+                  <span class="listName"> {{ item.name }} </span>
+                  <span class="pull-right btn btn-warning" (click)="delete(item); $event.stopPropagation()">Delete</span>
+            </li>
+      </ul>
+

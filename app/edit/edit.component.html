@@ -1,0 +1,34 @@
+<div *ngIf="item">
+<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+        <h2>{{item.name}}</h2>
+        
+        <label>name: </label>
+        <input [(ngModel)]="item.name"/>
+        <img class="detailImgSmall " src="{{ item.photo }}">
+         <label>photo: </label>
+        <input [(ngModel)]="item.photo"/>
+        <div class="clear-fix"></div>
+        <span>Price: </span>
+        <span class="badge">{{ item.price }}</span>
+  
+        <div class="clear-fix"></div>
+        <label>price: </label>
+        <input [(ngModel)]="item.price"/>
+        <div class="clear-fix"></div>
+        <label>description: </label>
+        <div class="clear-fix"></div>
+        <textarea [(ngModel)]="item.description"></textarea>
+    </div>
+    <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+        <img class="buttonImg" src="app/img/back-arrow.png" (click)="goBack()">
+        <img class="buttonImg" src="app/img/save.png" (click)="save()">
+        <div class="clear-fix"></div>
+        <label>blueprint: </label>
+        <input [(ngModel)]="item.blueprint"/>
+        <img class="detailImg hover img-responsive" [src]="item.blueprint" width="200" />
+        <h3>Description:</h3>
+        <blockquote>{{ item.description }} </blockquote>
+    </div>
+</div>
+</div>

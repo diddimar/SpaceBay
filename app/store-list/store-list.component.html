@@ -1,0 +1,16 @@
+   <ul class="list-group">
+      <li class="list-group-item" *ngFor="let item of items" (click)="onSelect(item)">
+            <img class="listImg " src="{{ item.photo }}">
+            <span class="listName"> {{ item.name }} </span>
+            <div class="pull-right">
+                  <span>Price: </span>
+                  <span class="badge">{{ item.price }}</span>
+            <span><img class="buttonImg" src="app/img/basket.png" (click)="buy(item); $event.stopPropagation()" ></span>
+            </div>
+      </li>
+    </ul>
+    <div class="smallBasketDiv footer navbar-fixed-bottom pull-right">
+    <p>  {{ numberOfItems }} : Items </p>
+    <p>Total Price : {{ totalPrice | currency:'USD':true:'1.0' }} </p>
+    <span><img class="listImg img-responsive textCenter" src="app/img/basket.png" (click)="viewBasket()" ></span>
+    </div>
