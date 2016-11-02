@@ -6,8 +6,8 @@ import { StoreGridComponent }     from '../store-grid/store-grid.component';
 import { AdminComponent}          from '../admin/admin.component';  
 import { BasketComponent }        from '../basket/basket.component';
 import { EditComponent }          from '../edit/edit.component';
-import { NewItemComponent }          from '../new-item/new-item.component';
 import { DetailComponent }        from '../detail/detail.component';
+import { CheckOutComponent }        from '../checkout/checkout.component';
 import { AboutComponent }        from '../about/about.component';
 
 const routes: Routes = [
@@ -17,8 +17,8 @@ const routes: Routes = [
   { path: 'admin',  component: AdminComponent },
   { path: 'basket',  component: BasketComponent },
   { path: 'edit/:id',  component: EditComponent },
-  { path: 'new',  component: NewItemComponent },
   { path: 'detail/:id',  component: DetailComponent },
+  { path: 'checkOut',  component: CheckOutComponent },  
   { path: 'about',  component: AboutComponent },
   
 ];

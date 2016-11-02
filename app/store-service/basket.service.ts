@@ -25,7 +25,6 @@ export class BasketService {
     numberOfItems = 0;
     itemAlreadyInBasket = false;
     totalPrice = 0;
-    totalPriceOfId = 0;
  
    
     
@@ -39,23 +38,35 @@ export class BasketService {
         for(let x = 0;x < this.ITEMSINBASKET.length; x++){
           if(this.ITEMSINBASKET[x].id == item.id){
                item.qty = this.ITEMSINBASKET[x].qty + 1;
-           
                this.itemAlreadyInBasket = true;
               }
         }
         if(this.itemAlreadyInBasket == true){
           for(let x = 0;x < this.ITEMSINBASKET.length; x++){
             if(this.ITEMSINBASKET[x].id == item.id){
-                  this.ITEMSINBASKET.splice(x, 1);
+                  this.ITEMSINBASKET.splice( x, 1 );
                }   
+            }
         }
-    }
-
-    item.totalPrice =+ item.price;
-    this.totalPrice += item.totalPrice; 
+    item.totalPriceId = item.price * item.qty;
+    this.totalPrice += item.price; 
     this.ITEMSINBASKET.push(item);
     this.numberOfItems += 1;
     }
+
+    addToBasketFromBasket(item : Item){
+    this.ITEMSINBASKET.push(item);
+          for(let x = 0;x < this.ITEMSINBASKET.length; x++){
+            if(this.ITEMSINBASKET[x].id == item.id){
+                 item.qty = this.ITEMSINBASKET[x].qty + 1;
+                 this.ITEMSINBASKET.splice( -1, 1 );
+               }   
+            }  
+    item.totalPriceId = item.price * item.qty;
+    this.totalPrice += item.price; 
+    this.numberOfItems += 1;
+    }
+
 
     deleteFromBasket(item): void {   
       for(let x = 0;x < this.ITEMSINBASKET.length; x++){
@@ -64,8 +75,9 @@ export class BasketService {
               this.ITEMSINBASKET.splice(x, 1);
               }
         } item.qty -= 1 ;
+        item.totalPriceId = item.price * item.qty;
         this.numberOfItems -= 1;
-        this.totalPrice -= item.totalPrice;
+        this.totalPrice -= item.price;
      }
 
     

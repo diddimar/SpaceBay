@@ -4,7 +4,7 @@
             <span class="listName"> {{ item.name }} </span>
             <div class="pull-right">
                   <span>Price: </span>
-                  <span class="badge">{{ item.price }}</span>
+                  <span class="badge">{{ item.price | currency:'USD':true:'1.0' }}</span>
             <span><img class="buttonImg" src="app/img/basket.png" (click)="buy(item); $event.stopPropagation()" ></span>
             </div>
       </li>

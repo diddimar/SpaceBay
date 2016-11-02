@@ -5,7 +5,7 @@
         
         <label>name: </label>
         <input [(ngModel)]="item.name"/>
-        <img class="detailImgSmall " src="{{ item.photo }}">
+        <img class="detailImgSmall " src="{{ item.photo }}" alt="Item Picture">
          <label>photo: </label>
         <input [(ngModel)]="item.photo"/>
         <div class="clear-fix"></div>
@@ -21,12 +21,14 @@
         <textarea [(ngModel)]="item.description"></textarea>
     </div>
     <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
-        <img class="buttonImg" src="app/img/back-arrow.png" (click)="goBack()">
-        <img class="buttonImg" src="app/img/save.png" (click)="save()">
+        <!--<img class="buttonImg" src="app/img/back-arrow.png" (click)="goBack()">-->
+        <img class="buttonImg" src="app/img/save.png" (click)="save(item)">
         <div class="clear-fix"></div>
+        <label>Video Url: </label>
+        <input [(ngModel)]="item.videoUrl"/>
         <label>blueprint: </label>
         <input [(ngModel)]="item.blueprint"/>
-        <img class="detailImg hover img-responsive" [src]="item.blueprint" width="200" />
+        <img class="detailImg hover img-responsive" src="{{ item.blueprint }}" alt="Detailed Item Picture"/>
         <h3>Description:</h3>
         <blockquote>{{ item.description }} </blockquote>
     </div>

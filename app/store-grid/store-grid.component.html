@@ -6,7 +6,7 @@
                 <img class="gridImg" src="{{ item.photo }}" >
             </div>
             <h3>{{ item.name }}</h3>
-            <span class="badge">{{ item.price }}</span>
+            <span class="badge">{{ item.price | currency:'USD':true:'1.0' }} </span>
             <span><img class="buttonImg pull-down" src="app/img/basket.png" (click)="buy(item); $event.stopPropagation()" ></span>
         </div>
     </div>

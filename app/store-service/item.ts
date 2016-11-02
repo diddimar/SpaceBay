@@ -3,8 +3,9 @@ export class Item {
     public name: string;
     public photo: string;
     public blueprint: string;
-    public price: number;
-    public totalPrice: number;
+    public price: number = 0;
+    public totalPriceId: number;
     public qty : number;
     public description: string;
+    public videoUrl : string = "";
 }

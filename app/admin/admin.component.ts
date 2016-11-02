@@ -14,7 +14,6 @@ export class AdminComponent implements OnInit{
 
     items: Item[];
     selectedItem: Item;
-    item: Item;
 
     constructor(
         private storeService : StoreService,
@@ -31,6 +30,15 @@ export class AdminComponent implements OnInit{
     this.router.navigate(['/edit', this.selectedItem.id]);
     }
     
+    
+    add(name: string): void {
+      name = name.trim();
+      if (!name) { return; }
+      this.storeService.create(name);
+      this.storeService.lastId += 1;
+      this.router.navigate(['/edit', this.storeService.lastId ]);
+      
+    }
     
     delete(item: Item): void {
     this.storeService

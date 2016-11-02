@@ -1,19 +1,27 @@
 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" *ngIf="item">
     <div class="col-lg-4 col-md-4 col-sm-4 col-xs-3">
         <h1> {{ item.name }} </h1>
-        <img class="detailImgSmall " src="{{ item.photo }}">
+        <img class="detailImgSmall " src="{{ item.photo }}" alt="Item Picture">
         <div class="clear-fix"></div>
         <span>Price: </span>
-        <span class="badge">{{ item.price }}</span>
+        <span class="badge">{{ item.price | currency:'USD':true:'1.0' }}</span>
         <span><img class="buttonImg" src="app/img/basket.png" (click)="buy(item); $event.stopPropagation()" ></span>
+        <div class="clear-fix"></div>
+        <button *ngIf=" item.videoUrl != 'noVideo' && !trailerPlaying " class="btn btn-warning" (click)="watchVideo(item)">Watch Video</button>
+        <button *ngIf="trailerPlaying"  class="btn btn-warning" (click)="stopTrailer()">Close Video</button>
     </div>
     <div class="col-lg-8 col-md-8 col-sm-8 col-xs-9">
         <img class="buttonImg" src="app/img/back-arrow.png" (click)="goBack()">
 
-        <img class="detailImg img-responsive" [src]="item.blueprint"/>
+        <img *ngIf="!trailerPlaying" class="detailImg img-responsive" src="{{ item.blueprint }}" alt="Detailed Item Picture"/>
+        <div class="container" *ngIf="trailerPlaying">
+            <div>
+                <iframe width="560" height="315" [src]="videoUrl" frameborder="0" allowfullscreen></iframe>
+            </div>
+        </div>
         <h3>Description:</h3>
         <blockquote> {{ item.description }}  </blockquote>
-    
+ 
         
     </div>
 

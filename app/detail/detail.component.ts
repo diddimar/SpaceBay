@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute, Params, Router }   from '@angular/router';
 import { Location }                 from '@angular/common';
+import { SafeUrl } from '@angular/platform-browser'
 
 import { StoreService } from '../store-service/store.service';
 import { BasketService } from '../store-service/basket.service';
@@ -19,6 +20,9 @@ export class DetailComponent {
     item: Item;
     numberOfItems = 0;
     totalPrice = 0;
+    
+    public autoPlay = "?autoplay=1";
+    public trailerPlaying = false;
 
     constructor(
         private storeService : StoreService,
@@ -43,9 +47,17 @@ export class DetailComponent {
     this.basketService.addToBasket(item);
     this.getTotalNumberOfItems();
     this.getTotalPrice();
-    
-    
 }
+    videoUrl: SafeUrl;
+    watchVideo(){
+        this.videoUrl = this.storeService.sanitizeUrl(this.item.videoUrl + this.autoPlay);
+        this.trailerPlaying = true;
+   }
+   stopTrailer(){
+    this.trailerPlaying = false;
+   }
+
+
       viewBasket(): void {
         this.router.navigate(['/basket']);
     }

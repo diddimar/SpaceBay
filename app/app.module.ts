@@ -16,7 +16,7 @@ import { StoreGridComponent }         from './store-grid/store-grid.component';
 import { DetailComponent }        from './detail/detail.component';
 import { AdminComponent }         from './admin/admin.component';
 import { EditComponent }        from './edit/edit.component';
-import { NewItemComponent }        from './new-item/new-item.component';
+import { CheckOutComponent }        from './checkout/checkout.component';
 import { AboutComponent }        from './about/about.component';
 
 import { BasketComponent }        from './basket/basket.component';
@@ -44,7 +44,7 @@ import { StoreRoutingModule }     from './store-service/store-routing.module';
     DetailComponent,
     AdminComponent,
     EditComponent,
-    NewItemComponent,
+    CheckOutComponent,
     AboutComponent,
 
     BasketComponent,

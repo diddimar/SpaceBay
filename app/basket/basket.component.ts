@@ -30,7 +30,6 @@ export class BasketComponent {
     ngOnInit(): void {
         this.basketService.getItemsInBasket()
         .then(k => this.items = k)
-        this.basketService.getItemsInBasket();
         this.getTotalNumberOfItems();
         this.getTotalPrice();
         this.getTotalPriceOfId();
@@ -48,15 +47,21 @@ export class BasketComponent {
     }
     
     delete(item: Item): void {
-        this.selectedItem = item;
+  
         this.basketService.deleteFromBasket(item);
         this.getTotalNumberOfItems();
         this.getTotalPrice();
     }
 
+    buy(item: Item): void{
+        this.selectedItem = item;
+        this.basketService.addToBasketFromBasket(item);
+        this.getTotalNumberOfItems();
+        this.getTotalPrice();
+    }
 
     getTotalPriceOfId(){
-        this.totalPriceOfId = this.basketService.totalPriceOfId;
+        this.totalPriceOfId = this.basketService.totalPrice;
    }
     getTotalPrice(){
         this.totalPrice = this.basketService.totalPrice;
@@ -65,6 +70,10 @@ export class BasketComponent {
         this.numberOfItems = this.basketService.numberOfItems;
     }
 
+    checkOut(){
+        this.emptyBasket();
+        this.router.navigate(['/checkOut']);
+    }
   
     emptyBasket(){
         this.basketService.ITEMSINBASKET = [];

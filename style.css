@@ -6,8 +6,14 @@ textarea {
   height: 120px;
   width: 200px;
 }
+.btn {
+  margin: 10px 0 10px 0;
+}
 .active {
   background-color:#FFA500;
+}
+.active2 {
+  color:#FFA500;
 }
 .navbar {
   margin-bottom: 30px;
@@ -50,15 +56,17 @@ textarea {
   height: auto;
   border-style: solid;
   border-left: thick double #D3D3D3;
+  max-height: 350px;
 }
 .detailImgSmall {
   margin: 10px 0 30px -40px;
   width: 110%;
   height: auto;
+  max-height: 230;
 }
 .basketImg {
   width: auto;
-  height: 50px;
+  height: 140px;
 }
 .smallBasketDiv {
   width: 130px;
