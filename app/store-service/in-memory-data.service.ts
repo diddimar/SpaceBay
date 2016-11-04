@@ -1,14 +1,14 @@
 import { InMemoryDbService } from 'angular-in-memory-web-api';
 
 
-export class InMemoryDataService implements InMemoryDbService {
+export class InMemoryDataService1 implements InMemoryDbService {
   createDb() {
     let inventory = [
         {
             id: 1,
             name: "Imperial Landing Craft",
-            photo: "app/img/imperial-landing-craft.jpg",
-            blueprint: "app/img/imperial-landing-craft-detail.jpg",
+            photo: "app/img/db1/imperial-landing-craft.jpg",
+            blueprint: "app/img/db1/imperial-landing-craft-detail.jpg",
             price: 150,
             totalPriceId : 150,
             qty: 1,
@@ -18,8 +18,8 @@ export class InMemoryDataService implements InMemoryDbService {
         {
             id: 2,
             name: "X Wing Fighter",
-            photo: "app/img/x-wing.jpg",
-            blueprint: "app/img/x-wing-detail.gif",
+            photo: "app/img/db1/x-wing.jpg",
+            blueprint: "app/img/db1/x-wing-detail.gif",
             price: 340,
             totalPriceId : 340,
             qty: 1,
@@ -29,8 +29,8 @@ export class InMemoryDataService implements InMemoryDbService {
         {
             id: 3,
             name: "V Wing Airspeeder",
-            photo: "app/img/v-wing-airspeeder.jpg",
-            blueprint: "app/img/v-wing-airspeeder-detail.jpg",
+            photo: "app/img/db1/v-wing-airspeeder.jpg",
+            blueprint: "app/img/db1/v-wing-airspeeder-detail.jpg",
             price: 220,
             totalPriceId : 220,
             qty: 1,
@@ -40,8 +40,8 @@ export class InMemoryDataService implements InMemoryDbService {
         {
             id: 4,
             name: "T-16 Skyhopper",
-            photo: "app/img/t-16-skyhopper.jpg",
-            blueprint: "app/img/t-16-skyhopper-detail.jpg",
+            photo: "app/img/db1/t-16-skyhopper.jpg",
+            blueprint: "app/img/db1/t-16-skyhopper-detail.jpg",
             price: 180,
             totalPriceId : 180,
             qty: 1,
@@ -51,8 +51,8 @@ export class InMemoryDataService implements InMemoryDbService {
         {
             id: 5,
             name: "TIE Fighter",
-            photo: "app/img/tie-fighter.jpg",
-            blueprint: "app/img/tie-fighter-detail.jpg",
+            photo: "app/img/db1/tie-fighter.jpg",
+            blueprint: "app/img/db1/tie-fighter-detail.jpg",
             price: 320,
             totalPriceId : 320,
             qty: 1,
@@ -62,8 +62,8 @@ export class InMemoryDataService implements InMemoryDbService {
         {
             id: 6,
             name: "World Devastator",
-            photo: "app/img/world-devastator.jpg",
-            blueprint: "app/img/world-devastator-detail.jpg",
+            photo: "app/img/db1/world-devastator.jpg",
+            blueprint: "app/img/db1/world-devastator-detail.jpg",
             price: 4700,
             totalPriceId : 4700,
             qty: 1,
@@ -73,8 +73,8 @@ export class InMemoryDataService implements InMemoryDbService {
         {
             id: 7,
             name: "Howlrunner",
-            photo: "app/img/howlrunner.jpg",
-            blueprint: "app/img/howlrunner-detail.jpg",
+            photo: "app/img/db1/howlrunner.jpg",
+            blueprint: "app/img/db1/howlrunner-detail.jpg",
             price: 140,
             totalPriceId : 140,
             qty: 1,
@@ -84,8 +84,8 @@ export class InMemoryDataService implements InMemoryDbService {
         {
             id: 8,
             name: "E Wing",
-            photo: "app/img/e-wing.jpg",
-            blueprint: "app/img/e-wing-detail.jpg",
+            photo: "app/img/db1/e-wing.jpg",
+            blueprint: "app/img/db1/e-wing-detail.jpg",
             price: 410,
             totalPriceId : 410,
             qty: 1,
@@ -95,8 +95,8 @@ export class InMemoryDataService implements InMemoryDbService {
         {
             id: 9,
             name: "Y-Wing Starfighter ",
-            photo: "app/img/y-wing.jpg",
-            blueprint: "app/img/y-wing-detail.jpg",
+            photo: "app/img/db1/y-wing.jpg",
+            blueprint: "app/img/db1/y-wing-detail.jpg",
             price: 510,
             totalPriceId : 510,
             qty: 1,

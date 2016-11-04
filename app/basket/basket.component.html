@@ -1,12 +1,12 @@
 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
     <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
         <h1> Basket </h1>
-        <h3 class="active2"> {{ numberOfItems }} ships</h3>
+        <h3 class="active2" style="text-align:right"> {{ numberOfItems }} ships</h3>
         <h3>Total Price :</h3>
         <div class="clearfix"></div>
-        <h3 class="active2">{{ totalPrice |  currency:'USD':true:'1.0' }} </h3>
-        <button class="pull-right btn btn-danger" (click)="emptyBasket()">Empty Basket</button>
-        <button class="pull-right btn btn-success" (click)="checkOut()">Check Out</button>
+        <h3 class="active2" style="text-align:right">{{ totalPrice |  currency:'USD':true:'1.0' }} </h3>
+        <button *ngIf="numberOfItems !== 0" class="pull-right btn btn-success" (click)="checkOut()">Check Out</button>
+        <button *ngIf="numberOfItems !== 0" class="pull-right btn btn-danger" (click)="emptyBasket()">Empty Basket</button>
         
     </div>
     <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9">
@@ -44,10 +44,10 @@
         
     </div>
     <div class="smallBasketDiv footer navbar-fixed-bottom">
-         <p>  {{ numberOfItems }} : Items  </p>
-    <p>Total Price : {{ totalPrice | currency:'USD':true:'1.0'}} </p>
-            <span><img class="listImg img-responsive textCenter" src="app/img/basket-open.png" (click)="goBack()" ></span>
-        </div>
+         <p> <span class="active2">{{ numberOfItems }}</span> : Items  </p>
+         <p>Total Price : <span class="active2">{{ totalPrice | currency:'USD':true:'1.0'}}</span> </p>
+        <span><img class="listImg img-responsive textCenter" src="app/img/basket-open.png" (click)="goBack()" ></span>
+    </div>
 
 </div>
 

@@ -14,6 +14,7 @@ export class AdminComponent implements OnInit{
 
     items: Item[];
     selectedItem: Item;
+    isAdmin: boolean = false;
 
     constructor(
         private storeService : StoreService,

@@ -58,7 +58,7 @@ export class DetailComponent {
    }
 
 
-      viewBasket(): void {
+    viewBasket(): void {
         this.router.navigate(['/basket']);
     }
 

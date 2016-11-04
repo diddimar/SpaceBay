@@ -29,11 +29,18 @@ textarea {
   width: 30px;
   margin: 0 0 2px 0;
 }
+.buttonImg:active {
+  height: 28px;
+  width: 28px;
+}
 .search-result:hover { 
   font-weight:bold;
   cursor: pointer;
 }
-.list-group-item:hover {cursor: pointer;}
+.list-group-item:hover {
+  cursor: pointer;
+  border: solid 2px grey;
+}
 .listImg:hover {cursor: pointer;}
 .listImg {
   width: auto;
@@ -47,7 +54,10 @@ textarea {
   width: 50%;
   height: auto;
 }
-.gridItem:hover {cursor: pointer;}
+.gridItem:hover {
+  cursor: pointer;
+  border: solid 2px grey;
+}
 .gridItem {
       height: 250px;
 }
@@ -62,14 +72,15 @@ textarea {
   margin: 10px 0 30px -40px;
   width: 110%;
   height: auto;
-  max-height: 230;
+  max-height: 350;
 }
 .basketImg {
   width: auto;
   height: 140px;
 }
 .smallBasketDiv {
-  width: 130px;
+  width: 140px;
   margin-left: 70px;
   margin-bottom: 40px;
 }
+

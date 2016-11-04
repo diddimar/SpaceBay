@@ -16,7 +16,8 @@ export class EditComponent {
     items: Item[];
     selectedItem: Item;
     item: Item;
-    toNumber : number;
+    isNumber = false;
+    isNewItem = false;
 
     constructor(
         private storeService : StoreService,
@@ -33,24 +34,32 @@ export class EditComponent {
     }
 
     goBack(): void {
-      this.location.back();
+          this.location.back();
     }
-    
+
+
+    preSave(item){
+        this.item.price = +this.item.price;     //fær NaN ef input price er stafa strengur annars to number
+        if(this.item.price > 0){
+            this.isNumber = true;
+            this.save(item);
+        }
+        else{
+            this.isNumber = false;
+        }
+    }
     save(item : Item): void {
+        if (this.item.videoUrl == "" || this.item.videoUrl == null ){ //Til að fela play video takka ef url er ekki til staðar, 
+            this.item.videoUrl = "noVideo"                            //líka á newly created item
+        }
+        this.item.qty = 1;                    //Eining á nýtt item
     
-    if (this.item.videoUrl == "" || this.item.videoUrl == null ){ //Til að fela play video takka ef url er ekki til staðar, 
-        this.item.videoUrl = "noVideo"                            //líka á newly created item
-    }
-    this.item.qty = 1;                   //Eining á nýtt item
-    this.item.price = +this.item.price; //Breyta String í number á nýjum items til að adda rétt í basket
-    if(this.item.price == 0 || this.item.price == NaN){
-      //Setja inn pop up alert window um að það sé ekki gilt verð á hlut
-    }else if (this.item.price > 0){
+        if (this.item.price > 0){
           this.storeService.update(this.item)
-        .then(() => this.goBack());
+          this.goBack();
+          }
     }
-  
-  }
+
 
 
     
