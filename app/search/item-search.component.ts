@@ -25,7 +25,7 @@ export class ItemSearchComponent implements OnInit {
   search(term: string): void {
     this.searchTerms.next(term);
   }
-  
+
   ngOnInit(): void {
     this.items = this.searchTerms
       .debounceTime(300)        // wait for 300ms pause in events
@@ -40,7 +40,15 @@ export class ItemSearchComponent implements OnInit {
         console.log(error);
         return Observable.of<Item[]>([]);
       });
+    
   }
+
+  searchString: string = ""; 
+  clearSearch(term){
+    this.searchString = "";
+    this.searchTerms.next(term);
+  }
+
   gotoDetail(item: Item): void {
     let link = ['/detail', item.id];
     this.router.navigate(link);
