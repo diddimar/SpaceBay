@@ -22,4 +22,18 @@ export class MainComponent {
          this.password = "";
     }
 
+    backgroundLink: string = "";
+
+    backgroundToggle(){
+        if ( this.backgroundLink == ""){
+            this.backgroundLink = "app/img/backgr.jpg";
+        }
+        else if(this.backgroundLink == "app/img/backgr.jpg"){
+              this.backgroundLink = "app/img/backgr1.jpg";
+        }
+        else if(this.backgroundLink == "app/img/backgr1.jpg"){
+              this.backgroundLink = "";
+        }
+    }
 }
+

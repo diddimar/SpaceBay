@@ -8,9 +8,15 @@ body {
   background-color: #F5F5F5;
   padding-bottom: 50px;
 }
+ #background_cover {
+   position: fixed;
+   background: no-repeat;
+   background-position: center;
+   z-index: -2;
+ }
 input { margin: 10px 0 10px 0;}
 textarea {
-  height: 120px;
+  height: 180px;
   width: 200px;
 }
 .btn {
@@ -58,8 +64,8 @@ textarea {
   font-size: 20px;
 }
 .gridImg{
-  margin-right: -20px;
-  width: 50%;
+  
+  width: 80%;
   height: auto;
 }
 .gridItem:hover {
@@ -93,7 +99,7 @@ textarea {
   height: 140px;
 }
 .smallBasketDiv {
-  background-color: white;
+  background-color: rgba(255, 255, 255, 0.4);
   padding: 15px;
   width: 140px;
   margin-left: 5%;
@@ -106,12 +112,10 @@ textarea {
     .smallBasketDiv{
       width: 90px;
       }
-
 }
 .white {
     border-radius: 25px;
-    background-color: white;
-    width: 105%;
+    background-color: rgba(255, 255, 255, 0.99);
     padding: 13px;
     margin-bottom: 20px;
     overflow: hidden;

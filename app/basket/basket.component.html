@@ -1,5 +1,5 @@
 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+    <div class="white col-lg-3 col-md-3 col-sm-3 col-xs-3">
         <h1> Basket </h1>
         <h3 class="active2" style="text-align:right"> {{ numberOfItems }} ships</h3>
         <div *ngIf="numberOfItems !== 0" >
@@ -13,7 +13,7 @@
     <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9">
         <img class="buttonImg" src="app/img/back-arrow.png" (click)="goBack()">
         <div *ngIf="numberOfItems === 0">
-            <h1>Your basket is empty! Please support your local spaceship dealer and buy some ships!</h1>
+            <h1 class="white">Your basket is empty! Please support your local spaceship dealer and buy some ships!</h1>
             <button class="btn btn-success" (click)="toStore()">Back To Store</button>
         </div>
         <ul class="list-group">

@@ -6,8 +6,8 @@
                         <span class="listName"> {{ item.name }} </span>
                   </div>
                   <div class="col-md-4">
-                        <span class="pull-right">Price:
-                              <span class="badge">{{ item.price | currency:'USD':true:'1.0' }}</span>
+                        <span class="badge  pull-right">
+                              {{ item.price | currency:'USD':true:'1.0' }}
                               <img class="buttonImg" src="app/img/basket.png" (click)="buy(item); $event.stopPropagation()" data-toggle="tooltip" title="Buy">
                         </span>
                   </div>

@@ -1,3 +1,8 @@
+<div id="background_cover"> <!-- Background -->
+  <img [src]="backgroundLink" />
+</div>
+<div id="video_cover_hue" style="{{hueColor}}">
+</div>
 <div class="container">
     <div id="nav" class="col-md-12 col-sm-12 col-xs-12" >
         <nav class="navbar navbar-default">
@@ -8,13 +13,13 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand active" routerLink="/list">the SpaceBay</a>
+                <a class="navbar-brand active" data-toggle="tooltip" title="Selling Spacehips since the Great Depression!">the SpaceBay</a>
             </div>
             <div id="navbar" class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
                     <li><a routerLink="/list">Frontpage</a></li>
                     <li><a routerLink="/about">About</a></li>
-                    <li><a data-toggle="modal" data-target="#myModal2">Administrator</a></li>
+                    <li><a style="cursor:pointer" data-toggle="modal" data-target="#myModal2">Administrator</a></li>
                 </ul>
             </div>
         </nav>
@@ -22,8 +27,9 @@
     <div id="leftSide" class="col-lg-2 col-md-2 col-sm-2 col-xs-2" >
         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
             <ul class="viewButtons">
-                <li><a routerLink="/list" routerLinkActive="active"><img class="buttonImg" src="app/img/list.png" data-toggle="tooltip" title="List View"></a></li>
-                <li><a routerLink="/grid" routerLinkActive="active"><img class="buttonImg" src="app/img/grid.png" data-toggle="tooltip" title="Grid View"></a></li>
+                <li class="white"><a routerLink="/list" routerLinkActive="active"><img class="buttonImg" src="app/img/list.png" data-toggle="tooltip" title="List View"></a></li>
+                <li class="white"><a routerLink="/grid" routerLinkActive="active"><img class="buttonImg" src="app/img/grid.png" data-toggle="tooltip" title="Grid View"></a></li>
+                <li class="white"><img (click)="backgroundToggle()" class="buttonImg" src="app/img/image.png" data-toggle="tooltip" title="Background"></li>
             </ul>
         </div>  
         <item-search></item-search>
