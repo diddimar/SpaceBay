@@ -17,7 +17,9 @@ export class EditComponent {
     selectedItem: Item;
     item: Item;
     isNumber = false;
-    isNewItem = false;
+    isNewestItem = false;
+    itemId = 0;
+
 
     constructor(
         private storeService : StoreService,
@@ -26,17 +28,28 @@ export class EditComponent {
     ){}
 
     ngOnInit(): void {
+    
       this.route.params.forEach((params: Params) => {
       let id = +params['id'];
       this.storeService.getItem(id)
       .then(k => this.item = k);
+      this.itemId = id;
+      this.checkIfNewest();
     });
+
     }
 
     goBack(): void {
           this.location.back();
     }
-
+    
+    checkIfNewest(){                             //Gert til að ekki sé hægt að gera cancel edit á newest item
+        if(this.storeService.lastId == this.itemId && this.itemId > 9 ){
+            this.isNewestItem = true;
+        }else{
+            this.isNewestItem = false;
+        }   
+    }
 
     preSave(item){
         this.item.price = +this.item.price;     //fær NaN ef input price er stafa strengur annars to number

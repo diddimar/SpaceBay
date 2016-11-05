@@ -1,5 +1,5 @@
 <div *ngIf="item">
-<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+<div class="white col-lg-12 col-md-12 col-sm-12 col-xs-12">
     <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
         <h2>{{item.name}}</h2>
         
@@ -41,7 +41,7 @@
                 </div>
         </div>
     </div>
-        <img class="buttonImg" src="app/img/cancel.ico" (click)="goBack(item)" data-toggle="tooltip" title="Cancel">
+        <img *ngIf="!isNewestItem" class="buttonImg" src="app/img/cancel.ico" (click)="goBack(item)" data-toggle="tooltip" title="Cancel">
         <div class="clear-fix"></div>
         <label>Video Url: </label>
         <input [(ngModel)]="item.videoUrl"/>

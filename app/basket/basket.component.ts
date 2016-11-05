@@ -18,9 +18,6 @@ export class BasketComponent {
     totalPrice = 0;
     totalPriceOfId = 0;
 
-
-
-    
  constructor(
         private basketService : BasketService,
         private router : Router,
@@ -33,12 +30,17 @@ export class BasketComponent {
         this.getTotalNumberOfItems();
         this.getTotalPrice();
         this.getTotalPriceOfId();
-        
     }
-
 
     goBack(): void {
         this.location.back();
+    }
+    checkOut(){
+        this.emptyBasket();
+        this.router.navigate(['/checkOut']);
+    }
+    toStore(): void {
+        this.router.navigate(['/list']);
     }
 
     onSelect(item: Item): void {
@@ -47,34 +49,25 @@ export class BasketComponent {
     }
     
     delete(item: Item): void {
-  
         this.basketService.deleteFromBasket(item);
         this.getTotalNumberOfItems();
         this.getTotalPrice();
     }
-
     buy(item: Item): void{
         this.selectedItem = item;
         this.basketService.addToBasketFromBasket(item);
         this.getTotalNumberOfItems();
         this.getTotalPrice();
     }
-
     getTotalPriceOfId(){
         this.totalPriceOfId = this.basketService.totalPrice;
-   }
+    }
     getTotalPrice(){
         this.totalPrice = this.basketService.totalPrice;
-   }
+    }
     getTotalNumberOfItems(){
         this.numberOfItems = this.basketService.numberOfItems;
     }
-
-    checkOut(){
-        this.emptyBasket();
-        this.router.navigate(['/checkOut']);
-    }
-  
     emptyBasket(){
         this.basketService.ITEMSINBASKET = [];
         this.basketService.totalPrice = 0;
@@ -84,12 +77,6 @@ export class BasketComponent {
         this.basketService.getItemsInBasket()
         .then(k => {
             this.items = k;
-     
         })
     }
-
-
-
-        
-    
 }
