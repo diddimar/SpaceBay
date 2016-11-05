@@ -18,6 +18,7 @@ import { AdminComponent }         from './admin/admin.component';
 import { EditComponent }        from './edit/edit.component';
 import { CheckOutComponent }        from './checkout/checkout.component';
 import { AboutComponent }        from './about/about.component';
+import { PopularComponent }        from './popular/popular.component';
 
 import { BasketComponent }        from './basket/basket.component';
 
@@ -46,6 +47,7 @@ import { StoreRoutingModule }     from './store-service/store-routing.module';
     EditComponent,
     CheckOutComponent,
     AboutComponent,
+    PopularComponent,
 
     BasketComponent,
 

@@ -8,6 +8,7 @@ import { BasketComponent }        from '../basket/basket.component';
 import { EditComponent }          from '../edit/edit.component';
 import { DetailComponent }        from '../detail/detail.component';
 import { CheckOutComponent }        from '../checkout/checkout.component';
+import { PopularComponent }        from '../popular/popular.component';
 import { AboutComponent }        from '../about/about.component';
 
 const routes: Routes = [
@@ -18,7 +19,8 @@ const routes: Routes = [
   { path: 'basket',  component: BasketComponent },
   { path: 'edit/:id',  component: EditComponent },
   { path: 'detail/:id',  component: DetailComponent },
-  { path: 'checkOut',  component: CheckOutComponent },  
+  { path: 'checkOut',  component: CheckOutComponent },
+  { path: 'popular',  component: PopularComponent },
   { path: 'about',  component: AboutComponent },
   
 ];
