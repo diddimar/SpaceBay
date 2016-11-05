@@ -34,8 +34,10 @@ export class StoreGridComponent implements OnInit{
     }
 
     onSelect(item: Item): void {
-    this.selectedItem = item;
-    this.router.navigate(['/detail', this.selectedItem.id]);
+        this.selectedItem = item;
+        item.views += 1;
+        this.storeService.update(item);
+        this.router.navigate(['/detail', this.selectedItem.id]);
    }
 
     viewBasket(): void {

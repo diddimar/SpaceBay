@@ -6,6 +6,7 @@ export class Item {
     public price: number = 0;
     public totalPriceId: number;
     public qty : number;
+    public views: number;
     public description: string;
     public videoUrl : string = "";
 }

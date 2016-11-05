@@ -31,6 +31,9 @@ textarea {
 .navbar {
   margin-bottom: 30px;
 }
+.badge {
+  background-color: #FFA500;
+}
 .viewButtons li{
     list-style: none;
     float: left;
@@ -99,6 +102,7 @@ textarea {
   height: 140px;
 }
 .smallBasketDiv {
+  text-align: center;
   background-color: rgba(255, 255, 255, 0.4);
   padding: 15px;
   width: 140px;
@@ -110,7 +114,7 @@ textarea {
 @media(max-width: 780px)
 {
     .smallBasketDiv{
-      width: 90px;
+      width: 120px;
       }
 }
 .white {

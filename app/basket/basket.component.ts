@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { Router }   from '@angular/router';
 import { Location }                 from '@angular/common';
 import { BasketService }            from '../store-service/basket.service';
+import { StoreService }            from '../store-service/store.service';
 import { Item } from '../store-service/item';
 
 @Component({
@@ -20,6 +21,7 @@ export class BasketComponent {
 
  constructor(
         private basketService : BasketService,
+        private storeService : StoreService,
         private router : Router,
         private location: Location
     ){}
@@ -35,9 +37,11 @@ export class BasketComponent {
     goBack(): void {
         this.location.back();
     }
-    checkOut(){
+    checkOut(item: Item){
+
         this.emptyBasket();
         this.router.navigate(['/checkOut']);
+      
     }
     toStore(): void {
         this.router.navigate(['/list']);
@@ -45,6 +49,8 @@ export class BasketComponent {
 
     onSelect(item: Item): void {
         this.selectedItem = item;
+        item.views += 1;
+        this.storeService.update(item);
         this.router.navigate(['/detail', this.selectedItem.id]);
     }
     

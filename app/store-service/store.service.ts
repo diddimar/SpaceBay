@@ -33,6 +33,7 @@ export class StoreService {
          let dangerousVideoUrl = 'https://www.youtube.com/embed/' + youTubeCode;
         return this.sanitizer.bypassSecurityTrustResourceUrl(dangerousVideoUrl);
     }
+    
 
 //-------------------------------Admin-------------------//
 

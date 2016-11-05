@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Headers, Http } from '@angular/http';
 import 'rxjs/add/operator/toPromise';
+import { StoreService }    from './store.service';
 
 import { Item } from './item';
 
@@ -11,6 +12,7 @@ export class BasketService {
     private headers = new Headers({'Content-Type': 'application/json'});
 
     constructor(
+        private storeService : StoreService,
         private http: Http) { };
 
     
@@ -25,6 +27,7 @@ export class BasketService {
     numberOfItems = 0;
     itemAlreadyInBasket = false;
     totalPrice = 0;
+    item = Item;
  
    
     
@@ -38,7 +41,7 @@ export class BasketService {
         for(let x = 0;x < this.ITEMSINBASKET.length; x++){
           if(this.ITEMSINBASKET[x].id == item.id){
                item.qty = this.ITEMSINBASKET[x].qty + 1;
-               this.itemAlreadyInBasket = true;
+               this.itemAlreadyInBasket = true;               
               }
         }
         if(this.itemAlreadyInBasket == true){

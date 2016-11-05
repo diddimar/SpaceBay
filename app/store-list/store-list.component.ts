@@ -32,33 +32,26 @@ export class StoreListComponent implements OnInit{
         this.storeService.getItems()
         .then(k => this.items = k)
     }
-
     onSelect(item: Item): void {
-    this.selectedItem = item;
-    this.router.navigate(['/detail', this.selectedItem.id]);
-  }
-
-  
-buy(item){
-    this.selectedItem = item;
-    this.basketService.addToBasket(item);
-    this.getTotalNumberOfItems();
-    this.getTotalPrice();
-    
-    
-}
-
-
-  
-  viewBasket(): void {
+        this.selectedItem = item;
+        item.views += 1;
+        this.storeService.update(item);
+        this.router.navigate(['/detail', this.selectedItem.id]);
+    }
+    buy(item){
+        this.selectedItem = item;
+        this.basketService.addToBasket(item);
+        this.getTotalNumberOfItems();
+        this.getTotalPrice();
+    }
+    viewBasket(): void {
         this.router.navigate(['/basket']);
-  }
-
-
-  getTotalPrice(){
-      this.totalPrice = this.basketService.totalPrice;
-  }
-  getTotalNumberOfItems(){
+    }
+    getTotalPrice(){
+        this.totalPrice = this.basketService.totalPrice;
+    }
+    getTotalNumberOfItems(){
         this.numberOfItems = this.basketService.numberOfItems;
     }
+
 }

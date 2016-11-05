@@ -3,12 +3,13 @@
         <h1> {{ item.name }} </h1>
         <img class="detailImgSmall " src="{{ item.photo }}" alt="Item Picture">
         <div class="clear-fix"></div>
-        <span>Price: </span>
-        <span class="badge">{{ item.price | currency:'USD':true:'1.0' }}</span>
-        <span><img class="buttonImg" src="app/img/basket.png" (click)="buy(item); $event.stopPropagation()" data-toggle="tooltip" title="Buy"></span>
-        <div class="clear-fix"></div>
+        <span class="badge">
+            {{ item.price | currency:'USD':true:'1.0' }}
+            <img class="buttonImg" src="app/img/basket.png" (click)="buy(item); $event.stopPropagation()" data-toggle="tooltip" title="Buy">
+        </span>
         <button *ngIf=" item.videoUrl != 'noVideo' && !trailerPlaying " class="btn btn-warning" (click)="watchVideo(item)">Watch Video</button>
         <button *ngIf="trailerPlaying"  class="btn btn-warning" (click)="stopTrailer()">Close Video</button>
+        <blockquote> {{ item.description }}  </blockquote>
     </div>
     <div class="col-lg-8 col-md-8 col-sm-8 col-xs-9">
         <img class="buttonImg" src="app/img/back-arrow.png" (click)="goBack()" data-toggle="tooltip" title="Go Back">
