@@ -15,18 +15,18 @@ export class PopularComponent implements OnInit{
 
     items: Item[];
     selectedItem: Item;
-  
+      
     constructor(
         private storeService : StoreService,
         private router : Router
     ){}
-    
-
 
     ngOnInit(): void {
-         this.storeService.getItems()
-        .then(k => this.items = k)
+        this.storeService.getItems()
+        .then(k => this.items = k)  
     }
+
+
 
     onSelect(item: Item): void {
         this.selectedItem = item;

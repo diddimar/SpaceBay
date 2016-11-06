@@ -40,7 +40,7 @@
             <li><b>Extra</b>
                 <ul>
                     <li>Password required = "admin"</i></li>
-                    <li>Unable to change price to zero or a string</li>
+                    <li>Unable to change price to zero or a string - komst svo að því að input type="number" hefði dugað</li>
                 </ul>
             </li>
         </ul>
